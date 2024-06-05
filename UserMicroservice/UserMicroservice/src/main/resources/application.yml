@@ -1,0 +1,75 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: USER-SERVICE
+
+#this is for register with eureka configuration-->
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8094/eureka
+
+#security:
+#  oauth2:
+#    resourceserver:
+#      jwt:
+#        issuer-uri: https://dev-85571020.okta.com/oauth2/default
+#
+#    client:
+#      registration:
+#        my-internal-client:
+#          provider: okta
+#          authorization-grant-type: client_credentials
+#          scope: internal
+#          client-id: 0oahh91l0mxFXOFSE5d7
+#          client-secret: hA8VQfs2GMkrUhJ-r7KWgk_mbOHBoe3CL5r5KYY0dhhMvettTdRuTXivPPxXx-rL
+#
+#
+#      provider:
+#        okta:
+#          issuer-uri: https://dev-85571020.okta.com/oauth2/default
+
+
+# this is for handle the faulty and circuit breaker.
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      circuitMovieBreaker:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 6s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+
+#okta:
+#  oauth2:
+#    issuer: https://dev-85571020.okta.com/oauth2/default
+#    audience: api://default
+
+
+
+

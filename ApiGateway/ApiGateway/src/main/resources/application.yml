@@ -1,0 +1,40 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/**
+        - id: MOVIE-SERVICE
+          uri: lb://MOVIE-SERVICE
+          predicates:
+            - Path=/movie/**
+        - id: REVIEW-SERVICE
+          uri: lb://REVIEW-SERVICE
+          predicates:
+            - Path=/review/**
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8094/eureka
+
+okta:
+  oauth2:
+    issuer: https://dev-85571020.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oahh91l0mxFXOFSE5d7
+    client-secret: hA8VQfs2GMkrUhJ-r7KWgk_mbOHBoe3CL5r5KYY0dhhMvettTdRuTXivPPxXx-rL
+    scopes: openid, profile, email, offline_access
+
