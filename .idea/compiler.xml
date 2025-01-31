@@ -15,12 +15,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ApiGateway" target="17" />
       <module name="ConfigServer" target="17" />
-      <module name="MoviesMicroservice" target="17" />
-      <module name="ReviewMicroservice" target="17" />
-      <module name="ServiceRegister" target="17" />
-      <module name="UserMicroservice" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

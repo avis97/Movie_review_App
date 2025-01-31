@@ -11,7 +11,6 @@ import java.util.Collections;
 @AllArgsConstructor
 @Data
 public class AuthResponse{
-
     private String userId;
     private String token;
     private String refreshToken;

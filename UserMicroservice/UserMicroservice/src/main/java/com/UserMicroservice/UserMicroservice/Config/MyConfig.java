@@ -12,12 +12,9 @@ import java.util.List;
 
 @Configuration
 public class MyConfig{
-
-
-
     @Bean
     @LoadBalanced
-    public RestTemplate restTemplate() {
+    public RestTemplate restTemplate(){
         return new RestTemplate();
     }
 

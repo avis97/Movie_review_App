@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ApiGateway/ApiGateway/ApiGateway.iml" filepath="$PROJECT_DIR$/ApiGateway/ApiGateway/ApiGateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Microservice.iml" filepath="$PROJECT_DIR$/.idea/Microservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MoviesMicroservice/MoviesMicroservice/MoviesMicroservice.iml" filepath="$PROJECT_DIR$/MoviesMicroservice/MoviesMicroservice/MoviesMicroservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ReviewMicroservice/ReviewMicroservice/ReviewMicroservice.iml" filepath="$PROJECT_DIR$/ReviewMicroservice/ReviewMicroservice/ReviewMicroservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ServiceRegister/ServiceRegister/ServiceRegister.iml" filepath="$PROJECT_DIR$/ServiceRegister/ServiceRegister/ServiceRegister.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UserMicroservice/UserMicroservice/UserMicroservice.iml" filepath="$PROJECT_DIR$/UserMicroservice/UserMicroservice/UserMicroservice.iml" />
     </modules>
   </component>
 </project>
